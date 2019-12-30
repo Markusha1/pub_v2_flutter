@@ -24,13 +24,13 @@ class IndicatorViePager extends StatefulWidget {
 }
 
 class _IndicatorViewState extends State<IndicatorViePager> {
-  List<Widget> list = [BigDot(), SimpleDot(), SimpleDot()];
+  List<Widget> list = [_BigDot(), _SimpleDot(), _SimpleDot()];
   bool isLastPage = false;
   List<Widget> _showDots(int page, int numberOfPages){
     list = List<Widget>(numberOfPages);
       for (int i = 0; i < list.length; i++){
-        if(i == page) list[i] = BigDot();
-        else list[i] = SimpleDot();
+        if(i == page) list[i] = _BigDot();
+        else list[i] = _SimpleDot();
       }
       print("$list");
     return list;
@@ -66,7 +66,7 @@ class _IndicatorViewState extends State<IndicatorViePager> {
         ),
         Align(
           alignment: Alignment(1, 1),
-          child: SkipButton()
+          child: _SkipButton()
         ),
         Align(
           // alignment: Alignment(1, 1),
@@ -122,7 +122,7 @@ class CustomOnBoardPage extends StatelessWidget {
   }
 }
 
-class SimpleDot extends StatelessWidget {
+class _SimpleDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -133,7 +133,7 @@ class SimpleDot extends StatelessWidget {
   }
 }
 
-class BigDot extends StatelessWidget {
+class _BigDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -144,7 +144,7 @@ class BigDot extends StatelessWidget {
   }
 }
 
-class SkipButton extends StatelessWidget {
+class _SkipButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
